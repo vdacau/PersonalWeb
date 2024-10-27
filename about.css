@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make the body take full height */
+}
+
+header {
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    padding: 1rem;
+    flex: 1; /* Allow main to grow and take available space */
+}
+
+.profile-picture {
+    width: 400px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.content {
+    flex: 1; /* Allow content to grow and take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    text-align: left; /* Align text to the left */
+    border-left: 2px solid #333; /* Vertical line on the left */
+    padding-left: 20px; /* Space between line and text */
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+a {
+    color: #005f6b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: auto; /* Push footer to the bottom */
+}

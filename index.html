@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Vlad Dacau</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vlad Dacau</h1>
+        <img src="IndexPicture.png" alt="Descriere poza" class="centered-image">
+        <h2>Time in Bucharest - EET</h2>
+        <h3 id="clock">12:26:46 AM EET</h3>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><span>/</span></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><span>/</span></li>
+                <li><a href="CV Dacau Vlad-Nicolae.pdf">Resume</a></li>
+                <li><span>/</span></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        // Script pentru actualizarea ceasului
+        function updateClock() {
+            const now = new Date();
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Europe/Bucharest' };
+            document.getElementById('clock').innerHTML = now.toLocaleTimeString('en-GB', options);
+        }
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>

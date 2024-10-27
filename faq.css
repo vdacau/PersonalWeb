@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make the body take full height */
+}
+
+header {
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem; 
+    text-align: center; /* Center header text */
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+main {
+    padding: 1rem;
+    flex: 1; /* Allow main to grow and take available space */
+    display: flex; /* Use flexbox to create columns */
+    justify-content: space-between; /* Space out columns */
+}
+
+section {
+    margin-bottom: 1.5rem;
+    width: 45%; /* Allow sections to take up less space */
+    position: relative; /* To position the vertical line */
+}
+
+.vertical-line {
+    width: 1px; /* Line thickness */
+    background-color: #333; /* Line color */
+    height: 100%; /* Full height of the section */
+    position: absolute; /* Position relative to section */
+    left: 108%; /* Position to the right of the first column */
+    top: 0; /* Start from the top */
+    margin-left: 20px; /* Space between line and text */
+}
+
+.personal-details {
+    padding-right: 20px; /* Space for the line */
+}
+
+dl {
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Space between terms */
+}
+
+dd {
+    margin: 0 0 1rem 0; /* Space below each definition */
+    padding-left: 1rem; /* Indent definitions for clarity */
+    text-align: left; /* Ensure left alignment */
+    word-wrap: break-word; /* Allow long words to break */
+}
+
+footer {
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    background-color: #333;
+    color: #fff;
+    text-align: center; /* Center footer text */
+    padding: 0.5rem;
+    margin-top: auto; /* Push footer to the bottom */
+}
