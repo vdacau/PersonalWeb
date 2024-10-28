@@ -6,11 +6,11 @@ body {
     color: #333;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Make the body take full height */
+    min-height: 100vh;
 }
 
 header {
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    font-family: 'Roboto', sans-serif;
     background-color: #333;
     color: #fff;
     padding: 1rem;
@@ -24,23 +24,26 @@ h1, h2, h3 {
 .container {
     display: flex;
     padding: 1rem;
-    flex: 1; /* Allow main to grow and take available space */
+    flex: 1;
+    flex-direction: row; /* Row layout for larger screens */
 }
 
 .profile-picture {
-    width: 400px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Space between image and text */
+    width: 400px; /* Default width for larger screens */
+    height: auto;
+    margin-right: 20px;
+    max-width: 100%; /* Ensure image does not exceed container */
+    object-fit: cover; /* Maintains aspect ratio within available space */
 }
 
 .content {
-    flex: 1; /* Allow content to grow and take remaining space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    text-align: left; /* Align text to the left */
-    border-left: 2px solid #333; /* Vertical line on the left */
-    padding-left: 20px; /* Space between line and text */
+    justify-content: center;
+    text-align: left;
+    border-left: 2px solid #333;
+    padding-left: 20px;
 }
 
 section {
@@ -61,10 +64,31 @@ a:hover {
 }
 
 footer {
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    font-family: 'Roboto', sans-serif;
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 0.5rem;
-    margin-top: auto; /* Push footer to the bottom */
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements on top of each other */
+        align-items: center; /* Center elements */
+        padding: 1rem 0;
+    }
+
+    .profile-picture {
+        width: 80%; /* Set image width to 80% of container */
+        max-width: 300px; /* Limit maximum width on smaller screens */
+        margin: 0 0 1rem 0; /* Center and add space below */
+    }
+
+    .content {
+        border-left: none; /* Remove border on mobile */
+        padding-left: 0;
+        text-align: center; /* Center text on smaller screens */
+    }
 }
