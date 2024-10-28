@@ -43,17 +43,16 @@ h2, h3 {
     margin: 10px 0;
 }
 
-..nav-links {
+.nav-links {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; /* Permite trecerea pe linie nouă */
-    gap: 5px; /* Diminuează spațiul între linkuri */
+    gap: 10px;
     justify-content: center;
     margin-top: 10px;
 }
 
 .nav-links li {
-    display: flex; /* Face fiecare element flex pentru a rămâne pe același rând cu slash-urile */
+    margin: 0;
 }
 
 .nav-links a, .nav-links span {
@@ -64,6 +63,10 @@ h2, h3 {
 
 /* Media Queries pentru ecrane mici */
 @media (max-width: 600px) {
+    .nav-links {
+        flex-wrap: wrap; /* Permite linkurile să se împartă pe linii noi doar pe ecrane mici */
+    }
+    
     h1 {
         font-size: 1.5em; /* Micșorează dimensiunea fontului pe ecrane mici */
     }
