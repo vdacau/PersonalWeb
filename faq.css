@@ -1,5 +1,12 @@
+.roboto-condensed-<uniquifier> {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto Condensed, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -10,7 +17,7 @@ body {
 }
 
 header {
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    font-family: 'Roboto Condensed', sans-serif; /* Changed to Roboto */
     background-color: #333;
     color: #fff;
     padding: 0.5rem; 
@@ -65,7 +72,7 @@ dd {
 }
 
 footer {
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    font-family: 'Roboto Condensed', sans-serif; /* Changed to Roboto */
     background-color: #333;
     color: #fff;
     text-align: center; /* Center footer text */
