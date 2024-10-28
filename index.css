@@ -46,14 +46,14 @@ h2, h3 {
 .nav-links {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; /* Permite ca linkurile să se împartă pe linii noi pe ecrane mai mici */
-    gap: 10px;
+    flex-wrap: wrap; /* Permite trecerea pe linie nouă */
+    gap: 5px; /* Diminuează spațiul între linkuri */
     justify-content: center;
     margin-top: 10px;
 }
 
 .nav-links li {
-    margin: 0;
+    display: flex; /* Face fiecare element flex pentru a rămâne pe același rând cu slash-urile */
 }
 
 .nav-links a, .nav-links span {
