@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+
+.roboto-condensed-<uniquifier> {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
