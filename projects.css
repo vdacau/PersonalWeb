@@ -1,0 +1,85 @@
+/* Center everything */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* Center the projects container */
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Ensure the projects are stacked vertically and centered */
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;  /* Allow project items to wrap into the next row */
+    justify-content: center;  /* Center the projects horizontally */
+    gap: 20px;  /* Add some space between items */
+}
+
+/* Individual project styling */
+.project-item {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* You can adjust the max-width here */
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.centered-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover .tooltip {
+    opacity: 96%;
+    visibility: visible;
+    bottom: 110%;
+}

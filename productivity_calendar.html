@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Productivity Calendar</title>
+  <link rel="stylesheet" href="productivity_calendar.css">
+</head>
+<body>
+  
+  <!-- Back Button -->
+  <button onclick="window.location.href='index.html'" class="back-button">Back to Home</button>
+  
+  <h1>Productivity Calendar</h1>
+  <p id="currentYear"></p>
+  <p>Click on each day to set your productivity level.</p>
+
+  <!-- Month selector -->
+  <label for="monthSelect">Select month:</label>
+  <select id="monthSelect" style="margin-top: 5px;"></select>
+
+  <!-- Calendar -->
+  <div id="calendar"></div>
+
+  <script>
+    const calendarContainer = document.getElementById('calendar');
+    const monthSelect = document.getElementById('monthSelect');
+    const today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+    document.getElementById('currentYear').textContent = `Current Year: ${currentYear}`;
+
+    const months = [
+      'January', 'February', 'March', 'April',
+      'May', 'June', 'July', 'August',
+      'September', 'October', 'November', 'December'
+    ];
+    
+    months.forEach((month, index) => {
+      const option = document.createElement('option');
+      option.value = index;
+      option.textContent = month;
+      monthSelect.appendChild(option);
+    });
+
+    const colors = ["low", "medium", "high", "very-high"];
+  
+    function generateCalendar(month, year) {
+      calendarContainer.innerHTML = '';
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const startDay = new Date(year, month, 1).getDay();
+      
+      const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+      const headerRow = document.createElement('div');
+      headerRow.classList.add('header-row');
+      daysOfWeek.forEach(day => {
+        const dayElement = document.createElement('div');
+        dayElement.classList.add('day-header');
+        dayElement.textContent = day;
+        headerRow.appendChild(dayElement);
+      });
+      calendarContainer.appendChild(headerRow);
+  
+      for (let i = 0; i < startDay; i++) {
+        const emptyCell = document.createElement('div');
+        emptyCell.classList.add('day', 'empty');
+        calendarContainer.appendChild(emptyCell);
+      }
+  
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayCell = document.createElement('div');
+        dayCell.classList.add('day');
+        dayCell.textContent = day;
+  
+        const savedColor = localStorage.getItem(`day-${year}-${month}-${day}`);
+        if (savedColor) dayCell.classList.add(savedColor);
+  
+        dayCell.addEventListener('click', () => {
+          let currentIndex = colors.findIndex(color => dayCell.classList.contains(color));
+          if (currentIndex !== -1) dayCell.classList.remove(colors[currentIndex]);
+          currentIndex = (currentIndex + 1) % colors.length;
+          dayCell.classList.add(colors[currentIndex]);
+  
+          const status = colors[currentIndex];
+          localStorage.setItem(`day-${year}-${month}-${day}`, status);
+        });
+  
+        calendarContainer.appendChild(dayCell);
+      }
+    }
+  
+    monthSelect.addEventListener('change', () => {
+      currentMonth = parseInt(monthSelect.value);
+      generateCalendar(currentMonth, currentYear);
+    });
+  
+    // Initialize the calendar and set the current month in the selector
+    monthSelect.value = currentMonth;
+    generateCalendar(currentMonth, currentYear);
+  </script>
+  
+</body>
+</html>
